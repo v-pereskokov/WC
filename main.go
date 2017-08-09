@@ -1,8 +1,10 @@
 package main
 
 import "fmt"
+import "test/math"
 
 func main() {
-	fmt.Printf("Hello, World!\n")
+    xs := []float64{1,2,3,4}
+    avg := math.Average(xs)
+    fmt.Println(avg)
 }
-
