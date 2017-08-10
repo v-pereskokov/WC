@@ -1,11 +1,12 @@
 language: go
 
 go:
-  - 1.7.x
+- tip
 
 branches:
   only:
   - master
 
 script:
- - go test -v ./...
+  - cd linesCount && go install
+  - cd ../test && go test
