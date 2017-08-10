@@ -6,3 +6,4 @@ go:
 branches:
   only:
   - master
+
