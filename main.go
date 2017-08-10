@@ -21,7 +21,8 @@ func main() {
 		panic("Enter the filename(s)!")
 	}
 
-	lines := linesCount.LinesCount(filePaths)
+	//lines := linesCount.LinesCount(filePaths)
 
-	printResultLines(lines)
+	//printResultLines(lines)
+	linesCount.CountLines(filePaths)
 }

@@ -3,6 +3,7 @@ package linesCount
 import (
 	"io/ioutil"
 	"bytes"
+	"fmt"
 )
 
 type ResultCount struct {
@@ -47,13 +48,13 @@ func LinesCount(filePaths []string) List {
 		file, error := ioutil.ReadFile(value)
 
 		if error != nil {
-			panic("No such file or directory!")
+			fmt.Println("No such file or directory!")
+		} else {
+			currentLength := getLine(file)
+			total += currentLength
+
+			result.append("      ", currentLength, value)
 		}
-
-		currentLength := getLine(file)
-		total += currentLength
-
-		result.append("      ", currentLength, value)
 	}
 
 	if len(filePaths) > 1 {
