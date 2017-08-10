@@ -1,7 +1,6 @@
 package test
 
 import (
-	"os"
 	"WC/linesCount"
 	"fmt"
 	"testing"
@@ -16,13 +15,13 @@ func printResultLines(lines linesCount.List) {
 }
 
 func TestLinesCount(t *testing.T) {
-	filePaths := os.Args[1:]
-
-	if len(filePaths) == 0 {
-		t.Error("Enter the filename(s)!")
-	}
+	filePaths := []string{"input.txt", "top.txt"}
 
 	lines := linesCount.LinesCount(filePaths)
+
+	if lines[2].GetLinesSize() != 14 {
+		t.Error("Error execute!")
+	}
 
 	printResultLines(lines)
 }
