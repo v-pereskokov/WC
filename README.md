@@ -9,7 +9,7 @@ Word count -[l] realisation
 
 ### Run test
 ```go
-go test
+cd test && go test
 ```
 
 ### Run main
