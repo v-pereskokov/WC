@@ -1,10 +1,27 @@
 package main
 
-import "fmt"
-import "test/math"
+import (
+	"os"
+	"WC/linesCount"
+	"fmt"
+)
+
+func printResultLines(lines linesCount.List) {
+	for i := 0; i < len(lines); i++ {
+		fmt.Print(lines[i].GetText())
+		fmt.Print(lines[i].GetLinesSize())
+		fmt.Println(" ", lines[i].GetFilePath())
+	}
+}
 
 func main() {
-    xs := []float64{1,2,3,4}
-    avg := math.Average(xs)
-    fmt.Println(avg)
+	filePaths := os.Args[1:]
+
+	if len(filePaths) == 0 {
+		panic("Enter the filename(s)!")
+	}
+
+	lines := linesCount.LinesCount(filePaths)
+
+	printResultLines(lines)
 }
