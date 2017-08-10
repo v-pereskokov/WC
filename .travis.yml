@@ -7,3 +7,5 @@ branches:
   only:
   - master
 
+script:
+ - go test -v ./...
